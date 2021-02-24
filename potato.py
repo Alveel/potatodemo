@@ -32,5 +32,10 @@ def potato():
     return render_template('potato.html')
 
 
+@app.route('/tomato')
+def tomato():
+    return render_template('tomato.html')
+
+
 if __name__ == '__main__':
     app.run()
