@@ -1,5 +1,6 @@
 build:
-	s2i build . registry.access.redhat.com/ubi8/python-38 potatodemo
+	docker build . --tag custom-python-ubi
+	s2i build . custom-python-ubi potatodemo
 	docker tag potatodemo tstocp1.azurecr.io/alwyn/potatodemo:latest
 
 push:
