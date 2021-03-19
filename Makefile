@@ -1,5 +1,9 @@
 build:
 	s2i build . registry.access.redhat.com/ubi8/python-38 potatodemo
+	docker tag potatodemo tstocp1.azurecr.io/alwyn/potatodemo:latest
+
+push:
+	docker push tstocp1.azurecr.io/alwyn/potatodemo
 
 run:
 	docker run -i --rm --name potatodemo -p 8080:8080 potatodemo
